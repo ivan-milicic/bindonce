@@ -177,7 +177,11 @@
 									classBinder(binder.element, value);
 									break;
 								case 'text':
-									binder.element.text(value);
+									if (value === null) {
+										binder.element.text(undefined);
+									} else {
+										binder.element.text(value);
+									}
 									break;
 								case 'html':
 									binder.element.html(value);
